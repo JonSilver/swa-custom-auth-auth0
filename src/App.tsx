@@ -5,13 +5,20 @@ import {
   StaticWebAuthLogins,
   UserInfoContextProvider,
   useUserInfo,
+  Logout,
 } from "@aaronpowell/react-static-web-apps-auth";
 
 const AuthStuff = () => {
   const userInfo = useUserInfo();
 
   if (userInfo.identityProvider) {
-    return <p>Welcome {userInfo.userDetails}</p>;
+    return (
+      <>
+        <p>Welcome {userInfo.userDetails}</p>
+        <Logout />
+        <p></p>
+      </>
+    );
   }
 
   return (
